@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/out_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_Black"
+    android:gravity="left"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_Black"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/test_left"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:layout_alignParentLeft="true"
+            android:text="Test_left"
+            android:textColor="@color/color_Black" />
+
+        <Button
+            android:id="@+id/test_right"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:layout_alignParentRight="true"
+            android:text="Test_right"
+            android:textColor="@color/color_Black" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/color_Black"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/test_top"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:text="Test_top"
+            android:textColor="@color/color_Black" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_Black"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/test_special"
+                android:layout_width="130dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="200dp"
+                android:text="Test_top"
+                android:textColor="@color/color_Black" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/test"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:layout_marginTop="150dp"
+            android:text="Test"
+            android:textColor="@color/color_Black" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_Black"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/test_left_bottom"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="Test_left_bottom"
+            android:textColor="@color/color_Black" />
+
+        <Button
+            android:id="@+id/test_right_bottom"
+            android:layout_width="130dip"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="Test_right_bottom"
+            android:textColor="@color/color_Black" />
+    </RelativeLayout>
+
+</LinearLayout>

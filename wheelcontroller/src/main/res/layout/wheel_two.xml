@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:picker="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    class="mma.wheel.component.view.WheelTwoDimensionPicker"
+    android:background="@drawable/roug_deep_gray_bg"
+    android:orientation="vertical"
+    android:padding="3dp" >
+
+    <LinearLayout
+        android:id="@+id/wheel_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jf_wheel_background_for_two"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/phone_tab_black_wheel_bg"
+            android:padding="5dp" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/ok"
+                    style="@style/button_blue"
+                    android:layout_width="56dip"
+                    android:layout_height="36dip"
+                    android:layout_alignParentRight="true"
+                    android:text="確定" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/color_White"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/cancel"
+                    style="@style/button_black"
+                    android:layout_width="56dip"
+                    android:layout_height="36dip"
+                    android:layout_alignParentLeft="true"
+                    android:text="取消" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <wheel.component.view.WheelTwoDimensionPicker
+            android:id="@+id/wheel_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            picker:alwaysShowTwoWheel="false"
+            picker:isCurrentSelectVisible="false"
+            picker:leftWheelVisibleLine="1"
+            picker:rightWheelVisibleLine="1"
+            picker:wheelTwoDimensionTextSize="22" />
+    </LinearLayout>
+
+</LinearLayout>

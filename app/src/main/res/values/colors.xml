@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<color name="color_FubonBlue">#FFE7F3F9</color>
+	<color name="color_Black">#FF000000</color>
+	<color name="color_BlackTransparent">#00000000</color>
+	<color name="color_Blue">#FF0000FF</color>
+	<color name="color_White">#FFFFFFFF</color>
+	<color name="color_Red">#CC0000</color>
+	<color name="color_Green">#006055</color>
+	<color name="color_BlackishGreen">#FF394A57</color>
+	<color name="color_Transparent">#00000000</color>
+	<color name="color_Brown">#FFA27446</color>
+	<color name="color_FundTitleBlue">#FF226498</color>
+	<color name="color_Gray">#333333</color>
+	<color name="color_Gray_Six">#666666</color>
+	<color name="color_DeepGray">#606060</color>
+	<color name="skyblue">#87CEEB</color> 
+	<color name="map_dot_org">#61C665</color> 
+	<color name="map_dot_cup">#F1132A</color>
+	<color name="calendar_sunday">#FF3333</color> 
+	<color name="calendar_saturday">#336600</color> 
+	<color name="arrow_bg">#dfe1e6</color> 
+</resources>

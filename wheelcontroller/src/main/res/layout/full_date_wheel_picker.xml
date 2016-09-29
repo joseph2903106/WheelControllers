@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:datealert="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wheel_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/roug_deep_gray_bg"
+    android:orientation="vertical"
+    android:padding="3dp" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_Black"
+        android:textSize="18sp" />
+
+    <wheel.component.view.WheelFullDatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        datealert:addZeroIfSmallThanTen="true"
+        datealert:canSetUpPastTime="true"
+        datealert:setCurrentTimeVisible="false"
+        datealert:showTaiwanYear="true" />
+
+</LinearLayout>

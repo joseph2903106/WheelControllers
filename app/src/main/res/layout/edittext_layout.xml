@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:picker="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/out_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_White"
+    android:gravity="left"
+    android:orientation="vertical" >
+
+    <SearchView
+        android:id="@+id/fuckTest"
+        android:layout_width="130dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"/>
+
+
+</LinearLayout>

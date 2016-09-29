@@ -1,0 +1,1 @@
+package wheel.component.demo;import android.app.Activity;public class WheelFullDialogActivity extends Activity{}

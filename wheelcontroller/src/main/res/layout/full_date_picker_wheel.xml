@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wheelView_container"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/wheelView_current_time_container"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="@color/color_DeepGray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <AnalogClock
+            android:id="@+id/analogClock"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:id="@+id/selectTime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/color_White"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <kankan.wheel.widget.WheelView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_weight="0.3" />
+
+        <kankan.wheel.widget.WheelView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_weight="0.5" />
+
+        <kankan.wheel.widget.WheelView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_weight="0.2" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+        <LinearLayout
+            android:id="@+id/time_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_DeepGray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="時"
+                android:textColor="@color/color_White"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="分"
+                android:textColor="@color/color_White"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:text="秒"
+                android:textColor="@color/color_White"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time_container"
+            android:orientation="horizontal" >
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/hour"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.3" />
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/minute"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.3" />
+
+            <kankan.wheel.widget.WheelView
+                android:id="@+id/second"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_weight="0.3" />
+        </LinearLayout>
+
+</LinearLayout>

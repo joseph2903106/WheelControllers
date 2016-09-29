@@ -1,0 +1,1 @@
+package wheel.component.controller;import android.view.View;/** * Giving the opportunity to control the behavior of wheel, such as scroll to * certain position.</br> 傳入客制化的滾輪View,並且控制其行為的CallBack.例如滾到特定的index *  * @author josephWang */public interface WheelScrollToController {	public void onShowWheel(View v);}

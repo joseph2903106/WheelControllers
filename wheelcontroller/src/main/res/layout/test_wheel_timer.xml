@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/out_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_White"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_White"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/pause"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="pause"
+            android:textColor="@color/color_Black"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="stop"
+            android:textColor="@color/color_Black"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/resume"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:text="resume"
+            android:textColor="@color/color_Black"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:gravity="center"
+        android:text="Test_left"
+        android:textColor="@color/color_Black"
+        android:textSize="22dp" />
+
+    <wheel.component.view.WheelTimer
+        android:id="@+id/timer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

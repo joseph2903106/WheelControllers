@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:triangle="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/wheel_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/left_top_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="UP"
+                triangle:triangleColor="@color/arrow_bg" />
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/center_top_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="UP"
+                triangle:triangleColor="@color/arrow_bg" />
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/right_top_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="UP"
+                triangle:triangleColor="@color/arrow_bg" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roug_deep_gray_bg"
+        android:orientation="vertical"
+        android:padding="3dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/jf_wheel_background"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/phone_tab_black_wheel_bg"
+                android:padding="5dp" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/ok"
+                        style="@style/button_blue"
+                        android:layout_width="56dip"
+                        android:layout_height="36dip"
+                        android:layout_alignParentRight="true"
+                        android:text="確定" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/color_White"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/cancel"
+                        style="@style/button_black"
+                        android:layout_width="56dip"
+                        android:layout_height="36dip"
+                        android:layout_alignParentLeft="true"
+                        android:text="取消" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wheelView_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dip" >
+
+                <kankan.wheel.widget.WheelView
+                    android:id="@+id/month"
+                    android:layout_width="fill_parent"
+                    android:layout_height="180dip"
+                    android:layout_weight="0.5" />
+
+                <kankan.wheel.widget.WheelView
+                    android:id="@+id/year"
+                    android:layout_width="fill_parent"
+                    android:layout_height="180dip"
+                    android:layout_weight="0.5" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/left_bottom_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="DOWN"
+                triangle:triangleColor="@color/arrow_bg" />
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/center_bottom_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="DOWN"
+                triangle:triangleColor="@color/arrow_bg" />
+
+            <wheel.component.view.TriangleView
+                android:id="@+id/right_bottom_triangle"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:visibility="gone"
+                triangle:shapeArrow="DOWN"
+                triangle:triangleColor="@color/arrow_bg" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

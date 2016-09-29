@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wheelView_container"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <kankan.wheel.widget.WheelView
+        android:id="@+id/wheel_single"
+        android:layout_width="fill_parent"
+        android:layout_height="170dp" />
+
+</LinearLayout>

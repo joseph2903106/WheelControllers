@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="wheel.component.demo" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".FunctionList"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="wheel.component.demo.WheelControllerActivity" />
+        <activity android:name="wheel.component.demo.WheelPopupControllerActivity" />
+        <activity android:name="wheel.component.demo.WheelDialogActivity" />
+        <activity android:name="wheel.component.demo.WheelPopupDialogActivity" />
+        <activity android:name="wheel.component.demo.WheelTwoDimensionPickerActivty" />
+        <activity android:name="wheel.component.demo.WheelTwoControllerActivity" />
+        <activity android:name="wheel.component.demo.WheelFullDialogActivity" />
+        <activity android:name="wheel.component.demo.WheelTwoPopupControllerActivity" />
+        <activity android:name="wheel.component.demo.WheelSinglePickerActivity" />
+        <activity android:name="wheel.component.demo.WheelFullDatePickerActivity" />
+        <activity android:name="wheel.component.demo.WheelTimerActivity" />
+        <activity android:name="wheel.component.demo.CircularTimerActivity" />
+    </application>
+</manifest>

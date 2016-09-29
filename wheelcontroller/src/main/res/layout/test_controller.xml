@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:picker="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/out_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_White"
+    android:gravity="left"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_White"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/test_left"
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:minHeight="50dip"
+            android:text="Test_left"
+            android:textColor="@color/color_Black" />
+
+        <Button
+            android:id="@+id/test_right"
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:minHeight="50dip"
+            android:text="Test_right"
+            android:textColor="@color/color_Black" />
+    </RelativeLayout>
+
+    <wheel.component.view.WheelTwoDimensionPicker
+        android:id="@+id/picker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/container_2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="60dp"
+        android:background="@color/color_White"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_White"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/test_left_2"
+                android:layout_width="130dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:minHeight="50dip"
+                android:text="Test_left_2"
+                android:textColor="@color/color_Black" />
+
+            <Button
+                android:id="@+id/test_right_2"
+                android:layout_width="130dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:minHeight="50dip"
+                android:text="Test_right_2"
+                android:textColor="@color/color_Black" />
+        </RelativeLayout>
+
+        <wheel.component.view.WheelTwoDimensionPicker
+            android:id="@+id/picker_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            picker:alwaysShowTwoWheel="false"
+            picker:isCurrentSelectVisible="false"
+            picker:leftWheelVisibleLine="1"
+            picker:rightWheelVisibleLine="1"
+            picker:wheelTwoDimensionTextSize="22" />
+    </LinearLayout>
+
+</LinearLayout>
