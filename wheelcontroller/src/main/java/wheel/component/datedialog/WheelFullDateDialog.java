@@ -367,18 +367,19 @@ public class WheelFullDateDialog implements OnKeyListener {
 		public void onClick(View v) {
 			if (v.getId() == R.id.ok) {
 				if (date_picker.isScrollFinish()) {
-					if (!isCanSetUpPastTime() && 
-						date_picker.getSelectCalendar().before(getTodayCalendar())) {
+					Calendar selectDate = date_picker.getSelectedTime();
+					if (!isCanSetUpPastTime() &&
+							selectDate.before(getTodayCalendar())) {
 						date_picker.setToday();
 						return;
-					} else if (!canSetUpFutureTime() && 
-							   date_picker.getSelectCalendar().after(getTodayCalendar())) {
+					} else if (!canSetUpFutureTime() &&
+							selectDate.after(getTodayCalendar())) {
 						date_picker.setToday();
 						return;
 					}
 					date_picker.stopScroll();
 					clickCalendar = currentCalendar;
-					wheelMsg.obj = date_picker.getSelectCalendar();
+					wheelMsg.obj = selectDate;
 					if (controllerListenr != null) {
 						controllerListenr.handleClick(wheelMsg.what, (Calendar) wheelMsg.obj);
 						dismiss();

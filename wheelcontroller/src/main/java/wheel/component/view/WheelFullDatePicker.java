@@ -1236,9 +1236,9 @@ public class WheelFullDatePicker extends LinearLayout {
 		return result;
 	}
 
-	public Calendar getSelectCalendar() {
-		return selectCalendar;
-	}
+//	public Calendar getSelectCalendar() {
+//		return selectCalendar;
+//	}
 
 	public static String getDayName(int day) {
 		return weekForDisplay[day - 1];
