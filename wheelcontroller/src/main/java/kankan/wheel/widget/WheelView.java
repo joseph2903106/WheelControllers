@@ -28,6 +28,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
@@ -46,9 +47,9 @@ import android.widget.LinearLayout;
 public class WheelView extends View {
 
 	/** Top and bottom shadows colors */
-	private static final int[] SHADOWS_COLORS = new int[] { 0xFF111111,
-			0x00AAAAAA, 0x00AAAAAA };
-
+	private static final int[] SHADOWS_COLORS = new int[] {Color.parseColor("#cccccc"),
+							                               Color.parseColor("#cccccc"),
+														   Color.parseColor("#cccccc")};
 	/** Top and bottom items offset (to hide that) */
 	private static final int ITEM_OFFSET_PERCENT = 10;
 
@@ -100,8 +101,8 @@ public class WheelView extends View {
     private List<OnWheelClickedListener> clickingListeners = new LinkedList<OnWheelClickedListener>();
 
 	private boolean showCenterForcus = true;
-	private boolean showShadow = true;
-	private boolean showBackGround = true;
+	private boolean showShadow = false;
+	private boolean showBackGround = false;
 
 	/**
 	 * Constructor

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:textColor="@color/color_Black"
+        android:textColor="@color/LogoRed"
         android:textSize="18sp" />
 
     <wheel.component.view.WheelFullDatePicker

@@ -13,7 +13,7 @@
 			android:angle="270" />
 		<stroke
 			android:width="1dip"
-			android:color="#333333" />
+			android:color="#555555" />
 		<corners
 			android:radius="5dp" />
 	</shape>

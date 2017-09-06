@@ -19,14 +19,13 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.util.ArrayMap;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.HashMap;
 
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.OnWheelScrollListener;
@@ -90,8 +89,8 @@ public class WheelTwoDimensionPicker extends LinearLayout {
 	private String[] leftData = { "" };
 	private String[] leftDataForDisplay = { "" };
 
-	private HashMap<String, String[]> rightData = new HashMap<String, String[]>();
-	private HashMap<String, String[]> rightDataForDisplay = new HashMap<String, String[]>();
+	private ArrayMap<String, String[]> rightData = new ArrayMap<String, String[]>();
+	private ArrayMap<String, String[]> rightDataForDisplay = new ArrayMap<String, String[]>();
 	private String[] dateArray;
 	private String[] dateArrayForDisplay;
 
@@ -187,11 +186,11 @@ public class WheelTwoDimensionPicker extends LinearLayout {
 		new Thread(setTodayThread).start();
 	}
 
-	public void setAllData(String[] leftData, HashMap<String, String[]> rightData) {
+	public void setAllData(String[] leftData, ArrayMap<String, String[]> rightData) {
 		setAllData(leftData, leftData, rightData, rightData);
 	}
 
-	public void setAllData(String[] leftData, String[] leftDataForDisplay, HashMap<String, String[]> rightData, HashMap<String, String[]> rightDataForDisplay) {
+	public void setAllData(String[] leftData, String[] leftDataForDisplay, ArrayMap<String, String[]> rightData, ArrayMap<String, String[]> rightDataForDisplay) {
 		indexLeft = 0;
 		indexRight = 0;
 		this.leftData = leftData;

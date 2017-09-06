@@ -369,11 +369,11 @@ public class WheelFullDateDialog implements OnKeyListener {
 				if (date_picker.isScrollFinish()) {
 					Calendar selectDate = date_picker.getSelectedTime();
 					if (!isCanSetUpPastTime() &&
-							selectDate.before(getTodayCalendar())) {
+						selectDate.before(getTodayCalendar())) {
 						date_picker.setToday();
 						return;
 					} else if (!canSetUpFutureTime() &&
-							selectDate.after(getTodayCalendar())) {
+								selectDate.after(getTodayCalendar())) {
 						date_picker.setToday();
 						return;
 					}

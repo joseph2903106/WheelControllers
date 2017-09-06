@@ -8,13 +8,13 @@
 
 	<shape>
 		<gradient
-			android:startColor="#606060"
-			android:centerColor="#606060"
-			android:endColor="#606060"
+			android:startColor="@color/color_White"
+			android:centerColor="@color/color_White"
+			android:endColor="@color/color_White"
 			android:angle="270" />
 		<stroke
 			android:width="2dip"
-			android:color="#dfe1e6" />
+			android:color="@color/color_White" />
 		<corners
 			android:radius="5dp" />
 		<padding

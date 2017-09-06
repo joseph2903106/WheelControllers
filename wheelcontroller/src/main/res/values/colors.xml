@@ -23,4 +23,9 @@
     <color name="color_Blue">#FF0000FF</color>
     <color name="color_Indigo">#483d8b</color>
     <color name="color_purple">#800080</color>
+    <color name="color_deep_gray">#FF555555</color>
+    <color name="drak_gray">#666666</color>
+    <color name="LogoRed">#ce3b2c</color>
+    <color name="LogoPressRed">#70ce3b2c</color>
+    <color name="wheel_bg">#EFEFEF</color>
 </resources>

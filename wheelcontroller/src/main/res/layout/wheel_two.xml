@@ -12,7 +12,7 @@
         android:id="@+id/wheel_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/jf_wheel_background_for_two"
+        android:background="@drawable/jf_wheel_background"
         android:orientation="vertical" >
 
         <LinearLayout

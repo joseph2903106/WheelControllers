@@ -48,8 +48,7 @@ import wheel.component.view.WheelControlListener;
  * A convenient class to show the DatePicker in the "Wheel" style,and also it is
  * based on the reason to imitate IPhone's style. The design of concept contains
  * that you could embed this WheelDatePicker in any kind View with bottom
- * position. This means whenever you trigger the WheelDatePicker through
- * {@link #WheelDatePicker.setWheelListener(View eachView, String title)}.
+ * position.
  * 
  * 
  * @author josephWang
@@ -246,13 +245,9 @@ public class WheelDateDialog implements OnKeyListener {
 	}
 
 	/**
-	 * 
-	 * @param layout
-	 * @param wheel
+	 *
+	 * @param trigger
 	 * @param title
-	 * @param show
-	 * @param handler
-	 * @return {@link WheelView}
 	 */
 	public void showDatePicker(View trigger, String title) {
 		setWheelListener(year, yearArrayForDisplay);

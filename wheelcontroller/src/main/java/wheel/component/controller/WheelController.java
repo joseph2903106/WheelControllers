@@ -39,18 +39,21 @@ import android.view.View.OnKeyListener;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import static android.R.attr.data;
+import static android.R.attr.type;
+
 /**
  * 利用WindowManager 動態的顯示滾輪視窗。</br> 請用WheelControlListener 接收callback與選擇的結果</br>
  * OnShowWheelListenr --->可以在滾輪顯示之前，做一些動作，如提示視窗
  * 
  * A convenient class controls all wheel dialog in the same activity through the
- * single {@link #WheelControlListener}.</br> Based on the reason that
+ * single {@link WheelControlListener}.</br> Based on the reason that
  * diversifying the situation on each function,designing this controller has to
- * be the independent object. </br>Adding {@link #OnshowWheelListenr} that gives
- * the chance to handling something {@link #showWheel(View v)} occurred while
- * {@link #onTouchEvent} is triggered,before wheel Dialog is showing. This
+ * be the independent object. </br>Adding {@link OnShowWheelListener} that gives
+ * the chance to handling something {@link OnShowWheelListener.showWheel(View v)} occurred while
+ * {@link onTouchEvent} is triggered,before wheel Dialog is showing. This
  * controller uses the id of view to distinguish the different
- * {@link #onTouchEvent} what view is triggered . Through the clue of View's
+ * {@link onTouchEvent} what view is triggered . Through the clue of View's
  * Id,the WheelControllerListener which receives the call back has to be
  * designed to be like follows example:</br>
  * 
@@ -70,17 +73,17 @@ import android.widget.TextView;
  * 	&#064;Override
  * 	public void handleClick(int viewId, Object obj) {
  * 		switch (viewId) {
- * 		case R.id.out_account:// 轉出帳號
+ * 		case R.id.out_account://轉出帳號
  * 			outAccount.setText(String.valueOf(obj));
  * 			getAvailableBalance();
  * 			break;
- * 		case R.id.search_bank_code:// ﻿查詢代號
+ * 		case R.id.search_bank_code://查詢代號
  * 			bankCode.setText(bankCodeData.get(wController.getIndex()).get(&quot;BankId&quot;));
  * 			intentData.BanName = bankCodeData.get(wController.getIndex()).get(&quot;BankDesc&quot;);
  * 			inAccount.setText(&quot;&quot;);
  * 			break;
- * 		case R.id.in_account:// 轉入帳號
- * 		case R.id.bank_code:// ﻿查詢代號
+ * 		case R.id.in_account://轉入帳號
+ * 		case R.id.bank_code://查詢代號
  * 			if (isSelectAccount) {
  * 				bankCode.setText(inAccounts.get(wController.getIndex()).get(&quot;Kinbr&quot;));
  * 				inAccount.setText(inAccounts.get(wController.getIndex()).get(&quot;AccountNoIn&quot;));
@@ -137,6 +140,7 @@ public class WheelController implements OnKeyListener {
 	private Dialog dialog;
 	private WindowManager.LayoutParams params = new WindowManager.LayoutParams();
 	private SparseArray<Object> collection = new SparseArray<Object>();
+	private SparseArray<Object> tagObjectList = new SparseArray<Object>();
 	private Message wheelMsg = new Message();
 	private Object sArray;// 顯示在滾輪上的資料結構
 	@SuppressWarnings("rawtypes")
@@ -208,21 +212,27 @@ public class WheelController implements OnKeyListener {
 		return WheelUtility.getDataSize(collection.get(viewId));
 	}
 
-	public Object getDataByIndex(int index)
+	public  <T extends Object> T getDataByIndex(int index)
 	{
-		return getDataByIndex(currentClickViewId, index);
+		return (T)getDataByIndex(currentClickViewId, index);
 	}
 	
 	/********************
 	 * 依據index 取得物件
 	 * ***********************/
-	public Object getDataByIndex(int viewId, int index)  {
+	public <T extends Object> T getDataByIndex(int viewId, int index)  {
 		if (collection.size() > 0) {
-			return WheelUtility.getDataByIndex(collection.get(viewId), index);	
+			return  (T) WheelUtility.getDataByIndex(collection.get(viewId), index);
 		} else {
-			return 0;
+			return null;
 		}
 	}
+
+	public <T extends Object> T getTagObjectList(int viewId)
+	{
+		return (T) tagObjectList.get(viewId);
+	}
+
 	private Context activity;
 
 	/**
@@ -230,7 +240,6 @@ public class WheelController implements OnKeyListener {
 	 * 
 	 * @param curr
 	 * @param controllerListenr
-	 * @param genView
 	 */
 	@SuppressWarnings("rawtypes")
 	public WheelController(Context curr, WheelControlListener controllerListenr) {
@@ -292,6 +301,11 @@ public class WheelController implements OnKeyListener {
 		eachView.setOnClickListener(getWheelListener(collection, line));
 	}
 
+	public void setCollection(int index, Object data)
+	{
+		collection.put(index, data);
+	}
+
 	private View.OnClickListener getWheelListener(final Object data, final int line) {
 		return new View.OnClickListener() {
 			@Override
@@ -303,8 +317,40 @@ public class WheelController implements OnKeyListener {
 					wheelMsg.what = v.getId();
 					collection.put(v.getId(), data);
 					WheelUtility.setUpWheelSelectData(data, wheelMsg);
-					changeInPutItems(v, data, line);
+					changeInPutItems(v, line);
 				}				
+			}
+		};
+	}
+
+	public void setWheelListener(View eachView, Object collection, final Object tagObject)
+	{
+		eachView.setOnClickListener(getWheelListener(collection,  tagObject, 1));
+	}
+
+	public void setWheelListener(View eachView, Object collection, final Object tagObject, int line)
+	{
+		eachView.setOnClickListener(getWheelListener(collection,  tagObject, line));
+	}
+
+	private View.OnClickListener getWheelListener(final Object data, final Object tagObject, final int line)
+	{
+		return new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				currentClickViewId = v.getId();
+				UIAdjuster.closeKeyBoard(activity);
+				if (onShowWheelListener.showWheel(v))
+				{
+					index = 0;
+					wheelMsg.what = v.getId();
+					collection.put(v.getId(), data);
+					tagObjectList.put(v.getId(), tagObject);
+					WheelUtility.setUpWheelSelectData(data, wheelMsg);
+					changeInPutItems(v, line);
+				}
 			}
 		};
 	}
@@ -313,7 +359,7 @@ public class WheelController implements OnKeyListener {
 	 * 初始化滾輪視窗元件
 	 */
 	private void initWheel() {
-		wheel = (View) LayoutInflater.from(activity).inflate(R.layout.wheel, null);
+		wheel = LayoutInflater.from(activity).inflate(R.layout.wheel, null);
 		titleView = (TextView) wheel.findViewById(R.id.title);
 		wheelView = (WheelView) wheel.findViewById(R.id.wheel_view);
 		wheelView.addChangingListener(changedListener);
@@ -322,7 +368,7 @@ public class WheelController implements OnKeyListener {
 		wheel.findViewById(R.id.cancel).setOnClickListener(buttonClickListener);
 	}
 
-	private void changeInPutItems(View v, Object data, final int line) {
+	private void changeInPutItems(View v, final int line) {
 		titleView.setText("" + getTitleText());
 		if (collection.get(v.getId()) == null) {
 			sArray = new Object();
@@ -380,8 +426,8 @@ public class WheelController implements OnKeyListener {
 		}
 	};
 
-	public Object getSelectData() {
-		return wheelMsg.obj;
+	public <T extends Object> T getSelectData() {
+		return (T) wheelMsg.obj;
 	}
 
 	private boolean isScrollFinish = true;

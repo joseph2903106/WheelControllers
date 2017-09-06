@@ -45,18 +45,18 @@
 
 	<!-- Look -->
 	<style name="button_blue">
-		<item name="android:background">@drawable/button_blue_selector</item>
-		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:background">@drawable/transparent_button_bg</item>
+		<item name="android:textColor">@drawable/button_text_selector</item>
 	</style>
 
 	<style name="button_gray">
-		<item name="android:background">@drawable/button_gray_selector</item>
-		<item name="android:textColor">#6F6F6F</item>
+		<item name="android:background">@drawable/transparent_button_bg</item>
+		<item name="android:textColor">@drawable/button_text_selector</item>
 	</style>
 
 	<style name="button_black">
-		<item name="android:background">@drawable/button_black_selector</item>
-		<item name="android:textColor">#FFFFFFFF</item>
+		<item name="android:background">@drawable/transparent_button_bg</item>
+		<item name="android:textColor">@drawable/button_text_selector</item>
 	</style>
 
 	<style name="choose_EditText_style">

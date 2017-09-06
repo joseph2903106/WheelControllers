@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.util.ArrayMap;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -31,7 +32,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.List;
 
 import kankan.wheel.widget.OnWheelChangedListener;
@@ -51,10 +51,10 @@ import wheel.component.utils.UIAdjuster;
  * </br>to revise whatever you want to be.</br></br>
  *
  * You can receive the "Calendar Object" through the callback
- * {@link #WheelFullDatePicker.setWheelListener(int viewID, WheelFullDateSyncListener wheelListener)}
+ * {@link WheelFullDatePicker.setWheelListener(int viewID, WheelFullDateSyncListener wheelListener)}
  * immediately.</br> Adding the method that letting user can restrict ceiling
  * and flooring in the period of available time in WheelFullDatePicker through
- * {@link #WheelFullDatePicker.setRestrictDate(Calendar beforeDate, Calendar afterDate)}
+ * {@link WheelFullDatePicker.setRestrictDate(Calendar beforeDate, Calendar afterDate)}
  * </br> Being careful that "beforeDate" must be earlier than "afterDate".
  *
  * @author josephWang
@@ -129,7 +129,7 @@ public class WheelFullDatePicker extends LinearLayout {
 	private String currSelectMonth = currentTime.substring(5, 7);
 	private String currSelectDate = currentTime.substring(8, 9);
 
-	private HashMap<RestrictDateType, RestrictMonth> monthMap = new HashMap<RestrictDateType, RestrictMonth>();
+	private ArrayMap<RestrictDateType, RestrictMonth> monthMap = new ArrayMap<RestrictDateType, RestrictMonth>();
 	private RestrictDateType restrictDateType = RestrictDateType.OneYear;
 
 	private int indexYear = 0;
@@ -237,7 +237,7 @@ public class WheelFullDatePicker extends LinearLayout {
 	 * As the semantics in method.You can restrict ceiling and flooring in the
 	 * period of</br> available time in WheelFullDatePicker.Whenever you want to
 	 * set WheelFullDatePicker be restricted or not, you can trigger it through
-	 * {@link #WheelFullDatePicker.setCanRestrictBetweenDate(boolean setRestrictBetweenDate)}
+	 * {@link WheelFullDatePicker.setCanRestrictBetweenDate(boolean setRestrictBetweenDate)}
 	 * .Therefore,only under both condition that</br> 1,
 	 * isSetRestrictBetweenDate() == true </br> 2, beforeDate!= null </br> 3,
 	 * afterDate!= null </br> Be careful that not to set afterDate earlier than
@@ -696,7 +696,6 @@ public class WheelFullDatePicker extends LinearLayout {
 	/**
 	 * 二月份處理 包含潤年
 	 *
-	 * @param tmp
 	 * @param currSelectYear
 	 */
 	private void invokeFeburary(int currSelectYear) {
@@ -713,12 +712,6 @@ public class WheelFullDatePicker extends LinearLayout {
 
 	/**
 	 *
-	 * @param layout
-	 * @param wheel
-	 * @param title
-	 * @param show
-	 * @param handler
-	 * @return {@link WheelView}
 	 */
 	public void initDatePicker() {
 		LinearLayout wheel = (LinearLayout) LayoutInflater.from(ctx).inflate(R.layout.full_date_picker_wheel, this, true);
