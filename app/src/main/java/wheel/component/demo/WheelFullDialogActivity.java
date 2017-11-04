@@ -1,1 +1,1 @@
-package wheel.component.demo;import android.app.Activity;public class WheelFullDialogActivity extends Activity{}
+package wheel.component.demo;import android.support.v4.app.FragmentActivity;public class WheelFullDialogActivity extends FragmentActivity{}

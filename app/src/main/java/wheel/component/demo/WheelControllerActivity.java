@@ -1,8 +1,8 @@
 package wheel.component.demo;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,7 +15,8 @@ import wheel.component.controller.OnShowWheelListener;
 import wheel.component.controller.WheelController;
 import wheel.component.genview.GenWheelView;
 import wheel.component.view.WheelControlListener;
-public class WheelControllerActivity extends Activity {
+public class WheelControllerActivity extends FragmentActivity
+{
 	private TextView test_left;
 	private TextView test_right;
 	private String[] data_test_left;
